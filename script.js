@@ -15,19 +15,19 @@ function mergeSort(arr) {
         return
     }
     else if (arr.length === 2) {
-        if (arr[0] > arr[1]) {
-            arr[1] = arr[0];
-            arr[0] = arr[1];
+        if (firstHalf[0] > secondHalf[0]){
+            return mergeSort([...secondHalf, ...firstHalf]);
         }
-        mergeSort(firstHalf);
-        mergeSort(secondHalf);
-        return arr;
+        else if (firstHalf[0] < secondHalf[0]){
+            return [...firstHalf, ...secondHalf];
+        }
     }
-    else {
-        mergeSort(firstHalf);
-        mergeSort(secondHalf);
-        return;
+    else if (arr.length > 2) {
+        
     }
+
 }
 
-console.log(mergeSort([11,10,9,8,5,4,3,7,1,2,6]));
+console.log(mergeSort([3, 2, 1]));
+console.log(mergeSort([1,2]));
+console.log(mergeSort([2,1]));
